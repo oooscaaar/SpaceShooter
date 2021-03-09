@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "ShooterCharacter.generated.h"
 
+class AGun;
+
 UCLASS()
 class SPACESHOOTER_API AShooterCharacter : public ACharacter
 {
@@ -21,6 +23,8 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	void Shoot();
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -29,8 +33,15 @@ private:
 	// Variables
 	UPROPERTY(EditAnywhere, Category = "Character Control")
 	float RotationRate = 20.f; // To make controller fps independent
+
 	UPROPERTY(EditAnywhere, Category = "Character Control")
 	float Sensitivity = 0.5f;
+	
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<AGun>GunClass;
+
+	UPROPERTY()
+	AGun* Gun;
 
 	// Functions
 	void MoveForward(float AxisValue);
