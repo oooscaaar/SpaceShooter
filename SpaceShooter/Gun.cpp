@@ -4,6 +4,7 @@
 #include "Gun.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "ShooterCharacter.h"
 
 // Sets default values
 AGun::AGun()
@@ -63,7 +64,18 @@ void AGun::PullTrigger()
 	
 	if (bSuccess)
 	{
-		DrawDebugPoint(GetWorld(), Hit.Location, 10, FColor::Red, true);
+		//DrawDebugPoint(GetWorld(), Hit.Location, 10, FColor::Red, true);
+
+		FVector ShootDirection = -Rotation.Vector(); // Shoot rotation to spawn particle
+		
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, Hit.Location, ShootDirection.Rotation());
+		
+		AActor* HitActor = Hit.GetActor();
+		if(HitActor)
+		{
+			FPointDamageEvent DamageEvent(Damage, Hit, ShootDirection, nullptr);
+			HitActor->TakeDamage(Damage, DamageEvent, OwnerController, this);
+		}
 	}
 	
 }
