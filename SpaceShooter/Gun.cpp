@@ -36,5 +36,25 @@ void AGun::Tick(float DeltaTime)
 void AGun::PullTrigger() 
 {
 	UGameplayStatics::SpawnEmitterAttached(MuzzleFlash, Mesh, TEXT("MuzzleFlashSocket"));
+
+	APawn* OwnerPawn = Cast<APawn>(GetOwner());
+
+	if (!OwnerPawn)
+	{
+		return;
+	}
+	
+	AController* OwnerController = OwnerPawn->GetController();
+
+	if (!OwnerController)
+	{
+		return;
+	}
+
+	FVector Location = GetActorLocation();
+	FRotator Rotation = GetActorRotation();
+	OwnerController->GetPlayerViewPoint(Location, Rotation);
+	
+	DrawDebugCamera(GetWorld(), Location, Rotation, 90, 2, FColor::Red, true);
 }
 

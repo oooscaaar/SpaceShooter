@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "DrawDebugHelpers.h" // Debug helpers
 #include "GameFramework/Actor.h"
 #include "Gun.generated.h"
 
