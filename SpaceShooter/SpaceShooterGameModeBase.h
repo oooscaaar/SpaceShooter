@@ -13,5 +13,8 @@ UCLASS()
 class SPACESHOOTER_API ASpaceShooterGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
+
+public:
+	virtual void PawnKilled(APawn* PawnKilled);
 	
 };
