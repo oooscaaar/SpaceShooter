@@ -8,7 +8,7 @@ public class SpaceShooter : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "GamePlayTasks" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "GamePlayTasks", "UMG"});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
