@@ -7,7 +7,7 @@ Learning Project from the Udemy Course:<br>
 <em>Unreal Engine C++ Developer: Learn C++ and Make Video Games</em><br>
 (https://www.udemy.com/course/unrealcourse/)
 
-<b>GamePlay Demo</b>: https://youtu.be/zDCybSjjonU
+<b>Gameplay Demo Video</b>: https://youtu.be/zDCybSjjonU
 
 ![Game Start](https://i.imgur.com/dZDM5GV.png)
 
