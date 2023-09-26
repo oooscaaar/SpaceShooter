@@ -1,6 +1,6 @@
 # Space Shooter
 
-Space Shooter Game Source Code [Unreal Engine 4 & C++]
+Third Person Space Shooter Game Source Code [Unreal Engine 4 & C++]
 <br><br>
 Learning Project from the Udemy Course:<br>
 
